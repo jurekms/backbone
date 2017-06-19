@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone</title>
+</head>
+<body>
+<h1>BACKBONE</h1>
+
+<ul>
+  <li><strong>jeden</strong></li>
+  <li><strong>dwa</strong></li>
+  <li><strong>trzy</strong></li>
+</ul>
+
+<script id="templateUser" type="text/template">
+<strong><%= username %></strong>
+
+</script>
+
+
+<script src="./assets/jquery.js"></script>
+<script src="./assets/underscore.js"></script>
+<script src="./assets/backbone.js"></script>
+<script src="./js/scripts.js"></script>
+
+</body>
+</html>
