@@ -200,7 +200,7 @@ $config['auth_library_function'] = '';
 */
 
 // ---Uncomment list line for the wildard unit test
-$config['auth_override_class_method_http']['users']['users']['get'] = 'digest';
+$config['auth_override_class_method_http']['users']['users']['get'] = 'basic';
 
 /*
 |--------------------------------------------------------------------------

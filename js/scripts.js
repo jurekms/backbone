@@ -58,7 +58,7 @@ var UsersView = Backbone.View.extend({
   render        : function(){
     this.$el.empty();
     this.collection.each( this.addOne, this );
-    $("body").append(this.el);
+    $(id="#usersList").append(this.el);
     return this;
   },
   addOne        : function(user){
@@ -67,22 +67,6 @@ var UsersView = Backbone.View.extend({
   }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 var user1 = new User({
@@ -137,9 +121,6 @@ var user5 = new User({
 });
 
 var users = new Users([user1,user2,user3,user4]);
-
-
-
 var usersView = new UsersView({collection : users});
 
 usersView.render();
