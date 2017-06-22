@@ -31,6 +31,31 @@ var Users = Backbone.Collection.extend({
   }
 });
 
+var UserDetailView = Backbone.View.extend({
+  tagName     : "div",
+  template    : _.template($("#templateDetailView").html()),
+  render      : function() {
+    console.log(this.model);
+    html = this.template(this.model.toJSON());
+    this.$el.html(html);
+    $("#userDetail").html(this.el);
+    return this;
+  }
+
+});
+
+
+var Router = Backbone.Router.extend({
+  routes: {"user/:id" : "showUserDetail"},
+  showUserDetail : function(id){
+    var user = users.get(id);
+    //console.log(user.toJSON());
+    console.log(user.toJSON());
+    var userDetailView = new UserDetailView( {model : user} );
+    userDetailView.render();
+    //console.log(id);
+  }
+});
 
 
 var UserView = Backbone.View.extend({
@@ -122,9 +147,9 @@ var user5 = new User({
 
 var users = new Users([user1,user2,user3,user4]);
 var usersView = new UsersView({collection : users});
-
+var route = new Router();
 usersView.render();
-
+Backbone.history.start({pushState: true});
 
 /*
 `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
